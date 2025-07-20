@@ -4,7 +4,7 @@ This repository contains a minimal FastAPI application skeleton for a document g
 
 ## Setup
 
-1. Create a virtual environment and install dependencies:
+1. Create a virtual environment and install dependencies manually:
 
    ```bash
    python -m venv venv
@@ -12,10 +12,17 @@ This repository contains a minimal FastAPI application skeleton for a document g
    pip install -r requirements.txt
    ```
 
-2. Run the application:
+2. Run the application manually:
 
    ```bash
    uvicorn app.main:app --reload
+   ```
+
+3. Alternatively, execute the included `install.sh` script to automatically
+   install dependencies, initialize the database and start the server:
+
+   ```bash
+   ./install.sh
    ```
 
 The API will be available at `http://localhost:8000/`.
