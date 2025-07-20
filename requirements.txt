@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+sqlalchemy
+
+structlog
+prometheus_client
+httpx
+jinja2
+python-jose[cryptography]
+passlib[bcrypt]
