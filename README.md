@@ -7,7 +7,7 @@ This repository contains a minimal FastAPI application skeleton for a document g
 1. Create a virtual environment and install dependencies manually:
 
    ```bash
-   python -m venv venv
+   python3 -m venv venv
    source venv/bin/activate
    pip install -r requirements.txt
    ```
@@ -19,10 +19,12 @@ This repository contains a minimal FastAPI application skeleton for a document g
    ```
 
 3. Alternatively, execute the included `install.sh` script to automatically
-   install dependencies, initialize the database and start the server:
+   install dependencies, initialize the database and start the server. On
+   shared hosting environments like REG.RU, you may need to run the script
+   explicitly with `bash`:
 
    ```bash
-   ./install.sh
+   bash install.sh
    ```
 
 The API will be available at `http://localhost:8000/`.
