@@ -1,24 +1,29 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Automated installation and launch script for it-site-yurist
 set -e
 
-if ! command -v python3 >/dev/null; then
+# Detect available Python 3 interpreter
+if command -v python3 >/dev/null; then
+  PYTHON=python3
+elif command -v python >/dev/null; then
+  PYTHON=python
+else
   echo "Python 3 is required but not installed." >&2
   exit 1
 fi
 
 # Create virtual environment if not already present
 if [ ! -d "venv" ]; then
-  python3 -m venv venv
+  "$PYTHON" -m venv venv
 fi
 
 # Activate environment and install dependencies
 source venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
+"$PYTHON" -m pip install --upgrade pip
+"$PYTHON" -m pip install -r requirements.txt
 
 # Initialize the database
-python - <<'PY'
+"$PYTHON" - <<'PY'
 from app.models import Base
 from app.core.db import engine
 Base.metadata.create_all(bind=engine)
