@@ -1,6 +1,8 @@
 # it-site-yurist
 
 This repository contains a minimal FastAPI application skeleton for a document generation service.
+The `static_site` directory contains an HTML version that works without installing any packages. Simply upload its contents to your hosting provider.
+
 
 ## Setup
 
